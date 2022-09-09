@@ -1,0 +1,30 @@
+# Project: Project3A_Translacao
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = Project3A_Translacao.o $(RES)
+LINKOBJ  = Project3A_Translacao.o $(RES)
+LIBS =  -lopengl32 -lglut -lglu32 -mwindows -lglu32 -lopengl32 -lwinmm -lgdi32  
+INCS = 
+CXXINCS = 
+BIN  = Project3A_Translacao.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Project3A_Translacao.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "Project3A_Translacao.exe" $(LIBS)
+
+Project3A_Translacao.o: Project3A_Translacao.cpp
+	$(CPP) -c Project3A_Translacao.cpp -o Project3A_Translacao.o $(CXXFLAGS)
