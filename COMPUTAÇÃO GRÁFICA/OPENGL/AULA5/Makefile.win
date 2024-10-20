@@ -1,0 +1,30 @@
+# Project: Project5_Animacao
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = Project5_Animacao.o $(RES)
+LINKOBJ  = Project5_Animacao.o $(RES)
+LIBS =  -lopengl32 -lglut -lglu32 -mwindows -lglu32 -lopengl32 -lwinmm -lgdi32  
+INCS = 
+CXXINCS = 
+BIN  = Project5_Animacao.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Project5_Animacao.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "Project5_Animacao.exe" $(LIBS)
+
+Project5_Animacao.o: Project5_Animacao.cpp
+	$(CPP) -c Project5_Animacao.cpp -o Project5_Animacao.o $(CXXFLAGS)

@@ -1,0 +1,30 @@
+# Project: Project1A
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = Project1A.o $(RES)
+LINKOBJ  = Project1A.o $(RES)
+LIBS =  -lopengl32 -lglut -lglu32 -mwindows -lglu32 -lopengl32 -lwinmm -lgdi32  
+INCS = 
+CXXINCS = 
+BIN  = Project1A.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Project1A.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "Project1A.exe" $(LIBS)
+
+Project1A.o: Project1A.cpp
+	$(CPP) -c Project1A.cpp -o Project1A.o $(CXXFLAGS)
